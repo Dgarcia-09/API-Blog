@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "b59ec301-2091-4917-ba10-44f5eb987f60",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42532049"
+	},
+	"item": [
+		{
+			"name": "Publicaciones",
+			"item": [
+				{
+					"name": "CrearPublicacion",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titulo",
+									"value": "Holaaa",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "Hola mundo",
+									"type": "text"
+								},
+								{
+									"key": "curso",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "/C:/Users/CompuFire/Downloads/b2ap3_amp_cdigo-fuente.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/blog/v1/publicacion/crear",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"blog",
+								"v1",
+								"publicacion",
+								"crear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListarPublicaciones",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Filtrar",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comentario",
+			"item": [
+				{
+					"name": "CrearComentario",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"Holaaa\",\r\n    \"comentario\": \"pkfoksfokf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/blog/v1/comentario/crear/681bfdfe5a30ce6d0b514421",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"blog",
+								"v1",
+								"comentario",
+								"crear",
+								"681bfdfe5a30ce6d0b514421"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ObtenerCometarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:3001/blog/v1/comentario/listar/681bfdfe5a30ce6d0b514421",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"blog",
+								"v1",
+								"comentario",
+								"listar",
+								"681bfdfe5a30ce6d0b514421"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
