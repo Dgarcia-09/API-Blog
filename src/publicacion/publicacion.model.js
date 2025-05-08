@@ -17,19 +17,13 @@ const publicacionSchema = new Schema({
         required: [true, 'El curso es obligatorio'],
         enum: ['Taller', 'Tecnologia', 'Practica Supervisada']
         },
-    fecha:{
-        type: Date,
-        required: [true, 'La fecha es obligatoria'],
-        validate: {
-            validator: function(value) {
-                return value >= new Date();
-            },
-            message: 'La fecha debe ser mayor o igual a la fecha actual'
-        }
-    },
     imagen:{
         type: String
     },
+    fecha:{
+        type: Date,
+        default: Date.now
+    }
 },{
     timestamps: true,
     versionKey: false

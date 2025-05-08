@@ -11,21 +11,15 @@ const comentarioSchema = new Schema({
         required: [true, 'El comentario es obligatorio'],
         maxlength: [500, 'El comentario no puede superar los 500 caracteres']
     },
-    fecha:{
-        type: Date,
-        required: [true, 'La fecha es obligatoria'],
-        validate: {
-            validator: function(value) {
-                return value >= new Date();
-            },
-            message: 'La fecha debe ser mayor o igual a la fecha actual'
-        }
-    },
     publicacion:{
         type: Schema.Types.ObjectId,
         ref: 'Publicacion',
         required: [true, 'La publicacion es obligatoria']
     },
+    fecha:{
+        type: Date,
+        default: Date.now
+    }
 },{
     timestamps: true,
     versionKey: false

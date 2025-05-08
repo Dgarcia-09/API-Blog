@@ -1,13 +1,12 @@
 import Publicacion from './publicacion.model.js'
 
-export const crearPublicacion = async (requestAnimationFrame, res) =>{
-    try{
+export const crearPublicacion = async (req, res) => {
+    try {
         const data = req.body
         let imagen = req.file ? req.file.filename : null
         data.imagen = imagen
 
-        const publicacion = new Publicacion.create(data)
-
+        const publicacion = new Publicacion(data)
         await publicacion.save()
 
         return res.status(201).json({
@@ -16,7 +15,7 @@ export const crearPublicacion = async (requestAnimationFrame, res) =>{
             publicacion
         })
 
-    }catch(error){
+    } catch (error) {
         return res.status(500).json({
             success: false,
             message: "Error al crear la publicacion",
@@ -25,10 +24,11 @@ export const crearPublicacion = async (requestAnimationFrame, res) =>{
     }
 }
 
+
+
 export const listarPublicaciones = async (req, res) =>{
     try{
         const publicaciones = await Publicacion.find()
-        .populate('comentarios')
         .sort({createdAt: -1}) 
         .exec()
 
