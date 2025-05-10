@@ -74,6 +74,92 @@
 						"header": []
 					},
 					"response": []
+				},
+				{
+					"name": "EliminarPublicacion",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "titulo",
+									"value": "Holaaa",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "Hola mundo",
+									"type": "text"
+								},
+								{
+									"key": "curso",
+									"value": "Taller",
+									"type": "text"
+								},
+								{
+									"key": "imagen",
+									"type": "file",
+									"src": "/C:/Users/CompuFire/Downloads/b2ap3_amp_cdigo-fuente.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/blog/v1/publicacion/eliminar/681e9b4647b7d8551dfba214",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"blog",
+								"v1",
+								"publicacion",
+								"eliminar",
+								"681e9b4647b7d8551dfba214"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"Primera Publicacion\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:3001/blog/v1/publicacion/editar/681e9acb47b7d8551dfba20f",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3001",
+							"path": [
+								"blog",
+								"v1",
+								"publicacion",
+								"editar",
+								"681e9acb47b7d8551dfba20f"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
