@@ -3,6 +3,8 @@ import {
   crearPublicacion,
   listarPublicaciones,
   filtrarPublicaciones,
+  eliminarPublicacion,
+  editarPublicacion
 } from './publicacion.controller.js';
 import { uploadPostPicture } from '../middlewares/multer-uploads.js';
 import { deleteFileOnError } from '../middlewares/delete-file-on-error.js';
@@ -131,5 +133,14 @@ router.get('/listar', listarPublicaciones);
  *         description: Error interno del servidor
  */
 router.get('/filtrar/:curso', filtrarPublicaciones);
+
+router.delete('/eliminar/:id', eliminarPublicacion);
+
+router.put('/editar/:id', 
+  uploadPostPicture.single('imagen'),
+  deleteFileOnError,
+  editarPublicacion)
+
+
 
 export default router;

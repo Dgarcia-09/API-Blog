@@ -70,6 +70,61 @@ export const filtrarPublicaciones = async (req, res) =>{
     }
 }
 
+export const eliminarPublicacion = async (req, res) =>{
+    try{
+        const {id} = req.params
 
+        const publicacion = await Publicacion.findByIdAndDelete(id)
+
+        if(!publicacion){
+            return res.status(404).json({
+                success: false,
+                message: "Publicacion no encontrada"
+            })
+        }
+
+        return res.status(200).json({
+            success: true,
+            message: "Publicacion eliminada correctamente",
+            publicacion
+        })
+    }catch(error){
+        return res.status(500).json({
+            success: false,
+            message: "Error al eliminar la publicacion",
+            error: error.message
+        })
+    }
+}
+
+export const editarPublicacion = async (req, res) =>{
+    try{
+        const {id} = req.params
+        const data = req.body
+        let imagen = req.file ? req.file.filename : null
+        data.imagen = imagen
+
+        const publicacion = await Publicacion.findByIdAndUpdate(id, data, {new: true})
+
+        if(!publicacion){
+            return res.status(404).json({
+                success: false,
+                message: "Publicacion no encontrada"
+            })
+        }
+
+        return res.status(200).json({
+            success: true,
+            message: "Publicacion editada correctamente",
+            publicacion
+        })
+    }catch(error){
+        return res.status(500).json({
+            success: false,
+            message: "Error al editar la publicacion",
+            error: error.message
+        })
+    }
+}
 
 
