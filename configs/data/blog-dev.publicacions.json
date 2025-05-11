@@ -1,0 +1,72 @@
+[{
+  "_id": {
+    "$oid": "681fe923f0760c4029bbf0af"
+  },
+  "titulo": "Tercera publicacion",
+  "descripcion": "Hola mundo",
+  "curso": "Tecnologia",
+  "imagen": null,
+  "fecha": {
+    "$date": "2025-05-11T00:02:43.464Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-11T00:02:43.468Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-11T00:02:43.468Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fe929f0760c4029bbf0b1"
+  },
+  "titulo": "Tercera publicacion",
+  "descripcion": "Hola mundo",
+  "curso": "Taller",
+  "imagen": null,
+  "fecha": {
+    "$date": "2025-05-11T00:02:49.245Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-11T00:02:49.246Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-11T00:02:49.246Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fe93df0760c4029bbf0b3"
+  },
+  "titulo": "Tercera publicacion",
+  "descripcion": "Hola mundo",
+  "curso": "Practica Supervisada",
+  "imagen": null,
+  "fecha": {
+    "$date": "2025-05-11T00:03:09.170Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-11T00:03:09.171Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-11T00:03:09.171Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "681fecba823df9cb2f8918f6"
+  },
+  "titulo": "Tercera publicacion",
+  "descripcion": "Hola mundo",
+  "curso": "Practica Supervisada",
+  "imagen": null,
+  "fecha": {
+    "$date": "2025-05-11T00:18:02.278Z"
+  },
+  "createdAt": {
+    "$date": "2025-05-11T00:18:02.283Z"
+  },
+  "updatedAt": {
+    "$date": "2025-05-11T00:18:02.283Z"
+  }
+}]
